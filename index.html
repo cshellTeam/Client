@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <script type="text/javascript" language="JavaScript"src="../easyui/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript"src="../easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" language="JavaScript"src="../easyui/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css" />
+    <link href="panel.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="panel.js"></script>
+
+    <script language="javascript">
+        function CheckLogin()
+        {
+            var usrName = document.getElementById("UserName");
+            var pwd = document.getElementById("Password");
+            if(usrName && pwd)
+            {
+                if(usrName.value == "admin" && pwd.value == "12345"
+                    ||usrName.value == "user1" && pwd.value == "1241"
+                    ||usrName.value == "poweruser1" && pwd.value == "12341")
+                {
+                    alert("登录成功");
+                     location.href="Login2.html";
+                }
+                else
+                {
+                    alert("用户名或密码错误");
+                    // location.href="index.html";
+                }
+            }
+        }
+    </script>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>跨云登录：使用Azure账号</title>
+</head>
+
+
+
+<body>
+<script type="text/javascript">
+           window.onload = function(){
+                    //屏蔽键盘事件
+                    document.onkeydown = function (){
+                            var e = window.event || arguments[0];
+                            //F12
+                            if(e.keyCode == 123){
+                                    return false;
+                                //Ctrl+Shift+I
+                                 }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                                     return false;
+                                 //Shift+F10
+                                 }else if((e.shiftKey) && (e.keyCode == 121)){
+                                     return false;
+                                 //Ctrl+U
+                                 }else if((e.ctrlKey) && (e.keyCode == 85)){
+                                     return false;
+                                 }
+                         };
+                     //屏蔽鼠标右键
+                     document.oncontextmenu = function (){
+                             return false;
+                         }
+                }
+                </script>
+
+<section>
+    <!-- 背景颜色 -->
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="box">
+        <!-- 背景圆 -->
+        <div class="circle" style="--x:0"></div>
+        <div class="circle" style="--x:1"></div>
+        <div class="circle" style="--x:2"></div>
+        <div class="circle" style="--x:3"></div>
+        <div class="circle" style="--x:4"></div>
+        <!-- 登录框 -->
+        <div class="container">
+            <div class="form">
+                <h2>登录</h2>
+                <form>
+                    <form method="post" action="***" name="form" onsubmit="checkpost()">
+                    <div class="inputBox" >
+                        <input type="text" name="name" id="UserName" placeholder="Azure账号"
+                               onFocus="if(value==defaultValue){value='';}"
+                               onBlur="if(!value){value=defaultValue;}" />
+
+                    </div>
+
+
+
+
+                    <div class="inputBox" id="password">
+                        <input type="password" id="Password" name="pwd" placeholder="Azure密码"
+                               onFocus="if(value==defaultValue){value='';}"
+                        onBlur="if(!value){value=defaultValue;}" />
+                    </div>
+
+
+
+
+
+                        <div class="inputBox">
+                                <input type="button" name="denglu"  value="Login" id="dl" onclick="javascript:CheckLogin()">
+                        </div>
+
+
+                    <p class="forget">忘记密码?<a href="#">
+                        点击这里
+                    </a></p>
+                    <p class="forget">没有账户?<a href="#">
+                        注册
+                    </a></p>
+
+                </form>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+
+</script>
+</html>
+
